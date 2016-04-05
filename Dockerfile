@@ -22,6 +22,8 @@ RUN wget http://archive.ubuntu.com
 
 RUN grep -h ^deb /etc/apt/sources.list
 
-RUN /usr/bin/apt-get install subversion
+RUN /usr/bin/apt-cache search svn
+
+#RUN /usr/bin/apt-get install subversion
 
 RUN svn co https://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/openbooks
