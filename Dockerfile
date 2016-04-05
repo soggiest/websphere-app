@@ -18,7 +18,7 @@ COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 RUN installUtility install --acceptLicense defaultServer \
     && rm -rf /opt/ibm/wlp/usr/servers/defaultServer/workarea
 
-RUN wget https://archive.ubuntu.com
+RUN wget http://archive.ubuntu.com
 
 RUN grep -h ^deb /etc/apt/sources.list
 
