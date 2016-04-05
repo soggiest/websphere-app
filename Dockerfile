@@ -18,6 +18,8 @@ COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 RUN installUtility install --acceptLicense defaultServer \
     && rm -rf /opt/ibm/wlp/usr/servers/defaultServer/workarea
 
+RUN find / -name *svn*
+
 RUN /usr/bin/apt-get install subversion
 
 RUN svn co https://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/openbooks
