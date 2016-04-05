@@ -18,12 +18,8 @@ COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 RUN installUtility install --acceptLicense defaultServer \
     && rm -rf /opt/ibm/wlp/usr/servers/defaultServer/workarea
 
-RUN wget http://archive.ubuntu.com
+RUN mkdir -p  /samples/applet_client
 
-RUN grep -h ^deb /etc/apt/sources.list
+WORKDIR /samples/applet_client
 
-RUN /usr/bin/apt-get update
-
-RUN /usr/bin/apt-get install subversion
-
-RUN svn co https://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/openbooks
+RUN wget http://www14.software.ibm.com/webapp/wsbroker/redirect?version=matt&product=was-nd-mp&topic=appletclient_samples_zip_http
