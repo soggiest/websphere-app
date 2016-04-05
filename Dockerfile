@@ -22,7 +22,7 @@ RUN wget http://archive.ubuntu.com
 
 RUN grep -h ^deb /etc/apt/sources.list
 
-RUN /usr/bin/apt-cache search svn
+RUN /usr/bin/apt-cache dump
 
 #RUN /usr/bin/apt-get install subversion
 
