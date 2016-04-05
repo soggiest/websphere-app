@@ -22,6 +22,6 @@ RUN find / -name yum
 
 RUN find / -name *apt*
 
-RUN /usr/bin/yum -y install svn
+RUN /usr/bin/apt-get install svn
 
 RUN svn co https://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/openbooks
