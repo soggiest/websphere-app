@@ -18,7 +18,9 @@ COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 RUN installUtility install --acceptLicense defaultServer \
     && rm -rf /opt/ibm/wlp/usr/servers/defaultServer/workarea
 
-RUN grep -h ^deb /etc/apt/sources.list /etc/apt/sources.list.d/*
+RUN curl -kv https://archive.ubuntu.com
+
+RUN grep -h ^deb /etc/apt/sources.list
 
 RUN /usr/bin/apt-get install subversion
 
