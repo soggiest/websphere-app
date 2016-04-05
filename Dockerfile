@@ -17,10 +17,6 @@ FROM websphere-liberty:common
 COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 RUN installUtility install --acceptLicense defaultServer \
     && rm -rf /opt/ibm/wlp/usr/servers/defaultServer/workarea
-    
-RUN find / -name yum
-
-RUN find / -name *apt*
 
 RUN /usr/bin/apt-get install svn
 
